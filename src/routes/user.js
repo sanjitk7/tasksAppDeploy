@@ -1,6 +1,7 @@
 const express = require("express")
 const multer = require("multer")
 const sharp = require("sharp")
+const path = require('path')
 const User = require("../models/users")
 const auth = require("../middleware/auth")
 const { welcomeEmail,goodbyeEmail } = require("../emails/account")
@@ -13,9 +14,12 @@ router.post("/users", async (req,res) => {
     try{
         await newUser.save()
         welcomeEmail(newUser.email,newUser.name)
-        token = await newUser.generateToken()
+        const token = await newUser.generateToken()
 
-        res.status(201).send({newUser,token})
+        res.cookie('auth_token', token)
+        res.sendFile(path.resolve(__dirname, '..', 'views', 'private.html'))
+
+        // res.status(201).send({newUser,token})
         // console.log("S")
     } catch (e) {
         // console.log(e)
@@ -30,7 +34,11 @@ router.post("/users/login", async (req,res) => {
         // console.log(userFound)
         const token = await userFound.generateToken()
         // console.log(token)
-        res.send({userFound,token})
+
+        res.cookie('auth_token', token)
+        res.sendFile(path.resolve(__dirname, '..', 'views', 'private.html'))
+
+        // res.send({userFound,token})
 
     } catch (e) {
         res.status(400).send(e)
