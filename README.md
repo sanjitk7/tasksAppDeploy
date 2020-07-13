@@ -1,5 +1,4 @@
 # Task Manager Application
-<<<<<<< HEAD
 
 Backend for a Task Manager Application using Express and Dynamic HTML Rendering.
 
