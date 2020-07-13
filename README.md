@@ -1,4 +1,5 @@
 # Task Manager Application
+<<<<<<< HEAD
 
 Backend for a Task Manager Application using Express and Dynamic HTML Rendering.
 
@@ -26,3 +27,6 @@ Backend for a Task Manager Application using Express and Dynamic HTML Rendering.
 ### **Flowchart**:
 
 ![task-app-diag](public/img/task-app-diag.png)
+
+
+Deployed via [heroku](https://sanjit-task-app.herokuapp.com/)
