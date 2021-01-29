@@ -2,6 +2,8 @@
 
 Backend for a Task Manager Application using Express and Dynamic HTML Rendering.
 
+Inspired from Andrew Mead's *[The Complete NodeJS Developer Course](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/learn/)*
+
 ### **Functionality**:
 
 1. Registering and Login of Users
@@ -28,4 +30,4 @@ Backend for a Task Manager Application using Express and Dynamic HTML Rendering.
 ![task-app-diag](public/img/task-app-diag.png)
 
 
-Deployed via [heroku](https://sanjit-task-app.herokuapp.com/)
+[Deployed with heroku](https://sanjit-task-app.herokuapp.com/)
